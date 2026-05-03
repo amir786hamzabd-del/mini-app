@@ -10,27 +10,27 @@
     body {
       margin: 0;
       font-family: Arial;
-      background: #f0f0f0;
+      background: #f2f2f2;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
     }
 
-    .card {
-      text-align: center;
+    .box {
       background: white;
       padding: 20px;
-      border-radius: 12px;
+      border-radius: 10px;
+      text-align: center;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
     button {
       margin-top: 10px;
       padding: 10px 15px;
-      border: none;
       background: #0088cc;
       color: white;
+      border: none;
       border-radius: 6px;
     }
   </style>
@@ -38,9 +38,9 @@
 
 <body>
 
-<div class="card">
-  <h1>🚀 Mini App Working</h1>
-  <p id="user">Loading user...</p>
+<div class="box">
+  <h2>🚀 Mini App চালু হয়েছে</h2>
+  <p id="user">লোড হচ্ছে...</p>
   <button onclick="send()">Send Data</button>
 </div>
 
@@ -49,7 +49,7 @@
   tg.expand();
 
   document.getElementById("user").innerText =
-    "Hello " + (tg.initDataUnsafe.user?.first_name || "User");
+    "হ্যালো " + (tg.initDataUnsafe.user?.first_name || "User");
 
   function send() {
     tg.sendData("Hello from mini app");
