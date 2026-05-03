@@ -2,15 +2,20 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Mini App</title>
+  <title>Eseyearn Mini App</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Telegram WebApp -->
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+  <!-- 🔴 Monetag SDK (এখানে তোমার আসল script বসানো হবে) -->
+  <script src="PASTE_YOUR_MONETAG_SCRIPT_HERE"></script>
 
   <style>
     body {
       margin: 0;
       font-family: Arial;
-      background: #e9eef3;
+      background: #eef2f7;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -19,19 +24,28 @@
 
     .box {
       background: white;
-      padding: 25px;
+      padding: 20px;
       border-radius: 12px;
+      width: 90%;
       text-align: center;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
     button {
       margin-top: 10px;
-      padding: 10px 15px;
-      border: none;
+      padding: 12px;
+      width: 100%;
       background: #0088cc;
       color: white;
-      border-radius: 6px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .balance {
+      font-size: 22px;
+      margin: 10px 0;
+      color: green;
     }
   </style>
 </head>
@@ -39,21 +53,51 @@
 <body>
 
 <div class="box">
-  <h2>🚀 Mini App চালু হয়েছে</h2>
-  <p id="user">লোড হচ্ছে...</p>
-  <button onclick="send()">Send Data</button>
+  <h2>🚀 Eseyearn Mini App</h2>
+
+  <p id="user">Loading...</p>
+
+  <div class="balance">
+    💰 Balance: <span id="bal">0</span> BDT
+  </div>
+
+  <button onclick="clickEarn()">👆 CLICK & EARN</button>
+  <button onclick="rewardPopup()">🎁 REWARD POPUP</button>
 </div>
 
 <script>
   let tg = window.Telegram.WebApp;
   tg.expand();
 
-  document.getElementById("user").innerText =
-    "হ্যালো " + (tg.initDataUnsafe.user?.first_name || "User");
+  let balance = 0;
 
-  function send() {
-    tg.sendData("Hello from mini app");
+  document.getElementById("user").innerText =
+    "Hello " + (tg.initDataUnsafe.user?.first_name || "User");
+
+  function update() {
+    document.getElementById("bal").innerText = balance;
   }
+
+  // =========================
+  // 💰 REWARDED INTERSTITIAL
+  function clickEarn() {
+    show_10959136().then(() => {
+      balance += 1;
+      update();
+      alert("🎉 +1 BDT Earned!");
+    });
+  }
+
+  // =========================
+  // 🎁 REWARDED POPUP
+  function rewardPopup() {
+    show_10959136('pop').then(() => {
+      balance += 2;
+      update();
+      alert("🎁 +2 BDT Bonus!");
+    });
+  }
+
 </script>
 
 </body>
