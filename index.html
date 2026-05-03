@@ -8,8 +8,10 @@
   <!-- Telegram WebApp -->
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
-  <!-- 🔴 Monetag SDK (এখানে তোমার আসল script বসানো হবে) -->
-  <script src="PASTE_YOUR_MONETAG_SCRIPT_HERE"></script>
+  <!-- 🔥 MONETAG SDK (ঠিকভাবে বসানো) -->
+  <script src="//libtl.com/sdk.js"
+          data-zone="10959136"
+          data-sdk="show_10959136"></script>
 
   <style>
     body {
@@ -58,11 +60,11 @@
   <p id="user">Loading...</p>
 
   <div class="balance">
-    💰 Balance: <span id="bal">0</span> BDT
+    💰 Balance: <span id="bal">0</span>
   </div>
 
   <button onclick="clickEarn()">👆 CLICK & EARN</button>
-  <button onclick="rewardPopup()">🎁 REWARD POPUP</button>
+  <button onclick="popupAd()">🎁 POPUP BONUS</button>
 </div>
 
 <script>
@@ -78,26 +80,27 @@
     document.getElementById("bal").innerText = balance;
   }
 
-  // =========================
-  // 💰 REWARDED INTERSTITIAL
+  // 🔥 REWARDED INTERSTITIAL
   function clickEarn() {
     show_10959136().then(() => {
       balance += 1;
       update();
-      alert("🎉 +1 BDT Earned!");
+      alert("🎉 +1 Earned!");
+    }).catch(() => {
+      alert("Ad not ready");
     });
   }
 
-  // =========================
   // 🎁 REWARDED POPUP
-  function rewardPopup() {
+  function popupAd() {
     show_10959136('pop').then(() => {
       balance += 2;
       update();
-      alert("🎁 +2 BDT Bonus!");
+      alert("🎁 +2 Bonus Earned!");
+    }).catch(() => {
+      alert("Ad error");
     });
   }
-
 </script>
 
 </body>
