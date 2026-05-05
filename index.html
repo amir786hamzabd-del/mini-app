@@ -1,107 +1,76 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Eseyearn Mini App</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Telegram WebApp -->
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- 🔥 MONETAG SDK (ঠিকভাবে বসানো) -->
-  <script src="//libtl.com/sdk.js"
-          data-zone="10959136"
-          data-sdk="show_10959136"></script>
+<!-- 🔥 Kadam Verification -->
+<meta name="kadam-verification" content="kadame4ba69eb392d742d22a316bb6bdd85ab" />
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial;
-      background: #eef2f7;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+<title>Bangla Taka</title>
 
-    .box {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      width: 90%;
-      text-align: center;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  text-align:center;
+  background:#0f172a;
+  color:white;
+}
 
-    button {
-      margin-top: 10px;
-      padding: 12px;
-      width: 100%;
-      background: #0088cc;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-    }
+h1{
+  margin-top:40px;
+  color:#00ff99;
+}
 
-    .balance {
-      font-size: 22px;
-      margin: 10px 0;
-      color: green;
-    }
-  </style>
+button{
+  display:block;
+  width:80%;
+  max-width:300px;
+  margin:15px auto;
+  padding:15px;
+  font-size:18px;
+  border:none;
+  border-radius:10px;
+  background:#22c55e;
+  color:white;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#16a34a;
+}
+</style>
+
+<script>
+
+// 🔥 replace with your Monetag / Adsterra link
+let adLink = "YOUR_AD_LINK_HERE";
+
+// 👆 Click to earn (open ad)
+function clickEarn(){
+  window.open(adLink, "_blank");
+}
+
+// 🎁 popup bonus
+function popupBonus(){
+  window.open(adLink, "_blank");
+  alert("🎁 Bonus Activated!");
+}
+
+</script>
+
 </head>
 
 <body>
 
-<div class="box">
-  <h2>🚀 Eseyearn Mini App</h2>
+<h1>🚀 Bangla Taka</h1>
 
-  <p id="user">Loading...</p>
+<p>💰 Earn by watching ads</p>
 
-  <div class="balance">
-    💰 Balance: <span id="bal">0</span>
-  </div>
-
-  <button onclick="clickEarn()">👆 CLICK & EARN</button>
-  <button onclick="popupAd()">🎁 POPUP BONUS</button>
-</div>
-
-<script>
-  let tg = window.Telegram.WebApp;
-  tg.expand();
-
-  let balance = 0;
-
-  document.getElementById("user").innerText =
-    "Hello " + (tg.initDataUnsafe.user?.first_name || "User");
-
-  function update() {
-    document.getElementById("bal").innerText = balance;
-  }
-
-  // 🔥 REWARDED INTERSTITIAL
-  function clickEarn() {
-    show_10959136().then(() => {
-      balance += 1;
-      update();
-      alert("🎉 +1 Earned!");
-    }).catch(() => {
-      alert("Ad not ready");
-    });
-  }
-
-  // 🎁 REWARDED POPUP
-  function popupAd() {
-    show_10959136('pop').then(() => {
-      balance += 2;
-      update();
-      alert("🎁 +2 Bonus Earned!");
-    }).catch(() => {
-      alert("Ad error");
-    });
-  }
-</script>
+<button onclick="clickEarn()">👆 CLICK & EARN</button>
+<button onclick="popupBonus()">🎁 POPUP BONUS</button>
 
 </body>
 </html>
