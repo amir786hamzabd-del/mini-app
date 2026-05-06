@@ -2,26 +2,36 @@
 <html lang="en">
 <head>
 
-<!-- 🔥 Kadam Verification -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Kadam Verification -->
 <meta name="kadam-verification" content="kadame4ba69eb392d742d22a316bb6bdd85ab" />
 
-<title>mini app</title>
+<title>Bangla Taka</title>
+
+<!-- Monetag Multi Tag -->
+<script src="https://quge5.com/88/tag.min.js" data-zone="235523" async></script>
 
 <style>
 body{
   margin:0;
   font-family:Arial;
   text-align:center;
-  background:#0f172a;
   color:white;
+  background:url('https://i.ibb.co/7QpKsCX/bg.jpg') no-repeat center/cover;
+}
+
+.container{
+  margin-top:60px;
 }
 
 h1{
-  margin-top:40px;
   color:#00ff99;
 }
 
-p{
+.dev{
+  margin-top:10px;
   opacity:0.8;
 }
 
@@ -33,7 +43,7 @@ button{
   padding:15px;
   font-size:18px;
   border:none;
-  border-radius:10px;
+  border-radius:12px;
   background:#22c55e;
   color:white;
   cursor:pointer;
@@ -46,24 +56,28 @@ button:hover{
 
 <script>
 
-// 🔥 তোমার Monetag / Adsterra link এখানে বসাও
-let adLink = "https://YOUR-MONETAG-LINK.com";
+// 🔥 2 ta Monetag link
+let links = [
+  "https://omg10.com/4/10955094",
+  "https://omg10.com/4/10955095"
+];
 
-// 👆 Click ad
-function showAd(){
-  window.open(adLink, "_blank");
+// random ad open
+function openAd(){
+  let random = Math.floor(Math.random() * links.length);
+  window.open(links[random], "_blank");
 }
 
-// 🎁 Bonus ad
+// bonus
 function bonusAd(){
-  window.open(adLink, "_blank");
+  openAd();
   alert("🎁 Bonus Activated!");
 }
 
-// 🔥 Auto ad (safe delay)
+// auto ad (delay)
 setTimeout(function(){
-  window.open(adLink, "_blank");
-}, 4000);
+  openAd();
+}, 5000);
 
 </script>
 
@@ -71,13 +85,17 @@ setTimeout(function(){
 
 <body>
 
-<h1>🚀 Bangla Taka</h1>
-<p>💰 Earn by watching ads</p>
+<div class="container">
 
-<button onclick="showAd()">👆 CLICK & EARN</button>
-<button onclick="bonusAd()">🎁 POPUP BONUS</button>
-<button onclick="showAd()">💸 EARN MORE</button>
-<button onclick="showAd()">🚀 START</button>
+<h1>💰 Bangla Taka</h1>
+<div class="dev">Developer: Future Developer</div>
+
+<button onclick="openAd()">👆 Click & Earn</button>
+<button onclick="bonusAd()">🎁 Bonus Ad</button>
+<button onclick="openAd()">💸 Earn More</button>
+<button onclick="openAd()">🚀 Start Earning</button>
+
+</div>
 
 </body>
 </html>
