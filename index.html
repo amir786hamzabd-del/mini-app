@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 
 <meta charset="UTF-8">
@@ -24,6 +24,10 @@ h1{
   color:#00ff99;
 }
 
+p{
+  opacity:0.8;
+}
+
 button{
   display:block;
   width:80%;
@@ -45,19 +49,24 @@ button:hover{
 
 <script>
 
-// 🔥 replace with your Monetag / Adsterra link
-let adLink = "YOUR_AD_LINK_HERE";
+// 🔥 তোমার Monetag / Adsterra link এখানে বসাও
+let adLink = "https://YOUR-MONETAG-LINK.com";
 
-// 👆 Click to earn (open ad)
-function clickEarn(){
+// 👆 Click ad
+function showAd(){
   window.open(adLink, "_blank");
 }
 
-// 🎁 popup bonus
-function popupBonus(){
+// 🎁 Bonus ad
+function bonusAd(){
   window.open(adLink, "_blank");
   alert("🎁 Bonus Activated!");
 }
+
+// 🔥 Auto ad (safe delay)
+setTimeout(function(){
+  window.open(adLink, "_blank");
+}, 4000);
 
 </script>
 
@@ -66,11 +75,12 @@ function popupBonus(){
 <body>
 
 <h1>🚀 Bangla Taka</h1>
-
 <p>💰 Earn by watching ads</p>
 
-<button onclick="clickEarn()">👆 CLICK & EARN</button>
-<button onclick="popupBonus()">🎁 POPUP BONUS</button>
+<button onclick="showAd()">👆 CLICK & EARN</button>
+<button onclick="bonusAd()">🎁 POPUP BONUS</button>
+<button onclick="showAd()">💸 EARN MORE</button>
+<button onclick="showAd()">🚀 START</button>
 
 </body>
 </html>
