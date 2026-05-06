@@ -5,10 +5,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Kadam Verification -->
 <meta name="kadam-verification" content="kadame4ba69eb392d742d22a316bb6bdd85ab" />
 
-<title>Bangla Taka</title>
+<title>Eseyearn</title>
 
 <!-- Monetag Multi Tag -->
 <script src="https://quge5.com/88/tag.min.js" data-zone="235523" async></script>
@@ -39,7 +38,7 @@ button{
   display:block;
   width:80%;
   max-width:300px;
-  margin:15px auto;
+  margin:12px auto;
   padding:15px;
   font-size:18px;
   border:none;
@@ -56,28 +55,32 @@ button:hover{
 
 <script>
 
-// 🔥 2 ta Monetag link
-let links = [
-  "https://omg10.com/4/10955094",
-  "https://omg10.com/4/10955095"
-];
+// 🔥 Different ad links
+let clickEarnLink = "https://omg10.com/4/10955094"; // main direct link
+let bonusLink = "https://omg10.com/4/10955095";
+let moreLink = "https://omg10.com/4/10955094";
+let startLink = "https://omg10.com/4/10955095";
 
-// random ad open
-function openAd(){
-  let random = Math.floor(Math.random() * links.length);
-  window.open(links[random], "_blank");
+// 👆 Click Earn (main)
+function clickEarn(){
+  window.open(clickEarnLink, "_blank");
 }
 
-// bonus
+// 🎁 Bonus
 function bonusAd(){
-  openAd();
+  window.open(bonusLink, "_blank");
   alert("🎁 Bonus Activated!");
 }
 
-// auto ad (delay)
-setTimeout(function(){
-  openAd();
-}, 5000);
+// 💸 Earn more
+function earnMore(){
+  window.open(moreLink, "_blank");
+}
+
+// 🚀 Start
+function startNow(){
+  window.open(startLink, "_blank");
+}
 
 </script>
 
@@ -87,13 +90,13 @@ setTimeout(function(){
 
 <div class="container">
 
-<h1>💰 Bangla Taka</h1>
+<h1>🚀 Eseyearn</h1>
 <div class="dev">Developer: Future Developer</div>
 
-<button onclick="openAd()">👆 Click & Earn</button>
+<button onclick="clickEarn()">👆 Click Earn</button>
 <button onclick="bonusAd()">🎁 Bonus Ad</button>
-<button onclick="openAd()">💸 Earn More</button>
-<button onclick="openAd()">🚀 Start Earning</button>
+<button onclick="earnMore()">💸 Earn More</button>
+<button onclick="startNow()">🚀 Start</button>
 
 </div>
 
