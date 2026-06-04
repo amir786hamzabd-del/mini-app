@@ -1,105 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Easy Earn</title>
 
-<!-- 🔥 Kadam Verification -->
-<meta name="kadam-verification" content="kadame4ba69eb392d742d22a316bb6bdd85ab" />
-
-<title>Eseyearn</title>
+<script src="//libtl.com/sdk.js"
+        data-zone="10959136"
+        data-sdk="show_10959136"></script>
 
 <style>
 body{
-  margin:0;
-  font-family:Arial;
-  text-align:center;
-  color:white;
-  background:url('https://i.ibb.co/7QpKsCX/bg.jpg') no-repeat center/cover;
+    background:#111;
+    color:#fff;
+    font-family:Arial,sans-serif;
+    text-align:center;
+    padding:20px;
 }
-
-.container{
-  margin-top:60px;
+.card{
+    background:#222;
+    border-radius:15px;
+    padding:20px;
+    margin:15px 0;
 }
-
-h1{
-  color:#00ff99;
-}
-
-.dev{
-  margin-top:10px;
-  opacity:0.8;
-}
-
 button{
-  display:block;
-  width:80%;
-  max-width:300px;
-  margin:12px auto;
-  padding:15px;
-  font-size:18px;
-  border:none;
-  border-radius:12px;
-  background:#22c55e;
-  color:white;
-  cursor:pointer;
+    width:90%;
+    max-width:350px;
+    padding:15px;
+    margin:10px;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    cursor:pointer;
 }
-
-button:hover{
-  background:#16a34a;
-}
+.watch{background:#28a745;color:#fff;}
+.bonus{background:#007bff;color:#fff;}
+.spin{background:#ff9800;color:#fff;}
 </style>
-
-<script>
-
-// 🔥 Ad links (Monetag / others)
-let link1 = "https://omg10.com/4/10955094";
-let link2 = "https://omg10.com/4/10955095";
-
-// ✅ Mobile safe ad open (IMPORTANT FIX)
-function openAd(link){
-  window.location.href = link;
-}
-
-// 👆 Click Earn
-function clickEarn(){
-  openAd(link1);
-}
-
-// 🎁 Bonus
-function bonusAd(){
-  openAd(link2);
-  alert("🎁 Bonus Activated!");
-}
-
-// 💸 Earn More
-function earnMore(){
-  openAd(link1);
-}
-
-// 🚀 Start
-function startNow(){
-  openAd(link2);
-}
-
-</script>
-
 </head>
-
 <body>
 
-<div class="container">
+<h1>💰 Easy Earn</h1>
 
-<h1>🚀 Eseyearn</h1>
-<div class="dev">Developer: Future Developer</div>
-
-<button onclick="clickEarn()">👆 Click Earn</button>
-<button onclick="bonusAd()">🎁 Bonus Ad</button>
-<button onclick="earnMore()">💸 Earn More</button>
-<button onclick="startNow()">🚀 Start</button>
-
+<div class="card">
+    <h2>Balance</h2>
+    <h1 id="balance">0</h1>
 </div>
+
+<button class="watch" onclick="watchAd()">🎥 Watch Ad</button>
+<button class="bonus" onclick="dailyBonus()">🎁 Daily Bonus</button>
+<button class="spin" onclick="spin()">🎡 Lucky Spin</button>
+
+<script>
+let balance = 0;
+
+function updateBalance(){
+    document.getElementById("balance").textContent = balance;
+}
+
+show_10959136({
+  type: 'inApp',
+  inAppSettings: {
+    frequency: 2,
+    capping: 0.1,
+    interval: 30,
+    timeout: 5,
+    everyPage: false
+  }
+});
+
+function watchAd(){
+    show_10959136('pop')
+    .then(() => {
+        balance += 10;
+        updateBalance();
+        alert("Reward Added");
+    })
+    .catch(() => {
+        alert("Ad unavailable");
+    });
+}
+
+function dailyBonus(){
+    balance += 20;
+    updateBalance();
+    alert("Daily Bonus Claimed");
+}
+
+function spin(){
+    let reward = Math.floor(Math.random()*50)+1;
+    balance += reward;
+    updateBalance();
+    alert("You won " + reward + " coins");
+}
+
+updateBalance();
+</script>
 
 </body>
 </html>
